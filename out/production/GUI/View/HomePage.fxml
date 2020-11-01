@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="mainPane" prefHeight="425.0" prefWidth="246.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.HomePageController" >
+   <children>
+      <ImageView fitHeight="425.0" fitWidth="296.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Resources/Images/justice-league.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="29.0" fitWidth="72.0" layoutX="126.0" layoutY="380.0" onMouseClicked="#Exit" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Resources/Images/exit.jpg" />
+         </image></ImageView>
+      <ImageView fitHeight="131.0" fitWidth="134.0" layoutX="77.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Resources/Images/MazeWorldWight.png" />
+         </image></ImageView>
+      <ImageView fitHeight="33.0" fitWidth="117.0" layoutX="93.0" layoutY="345.0" onMouseClicked="#switchInstructions" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Resources/Images/Instructions.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="30.0" fitWidth="117.0" layoutX="96.0" layoutY="275.0" onMouseClicked="#switchMenuStage" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Resources/Images/startGameWight.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="29.0" fitWidth="110.0" layoutX="96.0" layoutY="310.0" onMouseClicked="#switchCharacters" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Resources/Images/characterWight.jpg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

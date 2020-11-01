@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="rootPane" prefHeight="243.0" prefWidth="372.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.PropertiesController">
+      <children>
+      <Label alignment="CENTER" layoutX="80" layoutY="28.0" text="Configuration file" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </Label>
+         <TextField fx:id="textField_typeMaze" editable="false" layoutX="169.0" layoutY="99.0" prefHeight="25.0" prefWidth="168.0" promptText="None" AnchorPane.bottomAnchor="207.0" AnchorPane.leftAnchor="169.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="99.0" />
+      <Label fx:id="SearchingAlgorithm" layoutX="20.0" layoutY="145.0" text="Searching Algoritm:">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="Type_Maze" layoutX="80.0" layoutY="99.0" text="Type Maze:">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+         <rotationAxis>
+            <Point3D y="200.0" z="1.0" />
+         </rotationAxis>
+      </Label>
+         <TextField fx:id="textField_searchingAlgo" editable="false" layoutX="169.0" layoutY="145.0" prefHeight="25.0" prefWidth="168.0" promptText="None" />
+      <TextField fx:id="textField_numThreads" editable="false" layoutX="167.0" layoutY="192.0" prefHeight="25.0" prefWidth="168.0" promptText="None" />
+      <Label fx:id="numThreads" layoutX="25.0" layoutY="192.0" text="Number of threads:">
+          <font>
+              <Font name="System Bold Italic" size="15.0" />
+          </font>
+      </Label>
+      <Button layoutX="264.0" layoutY="253.0" mnemonicParsing="false" onAction="#switchSceneMenu" prefHeight="21.0" prefWidth="73.0" text="Go back">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></Button>
+      </children>
+     </AnchorPane>

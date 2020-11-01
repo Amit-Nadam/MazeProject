@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane fx:id="rootPane" onMouseClicked="#mouseClicked" stylesheets="@MyStyle.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MyViewController">
+<left>
+    <VBox onDragExited="#Exit" prefHeight="200.0" prefWidth="178.0" spacing="5.0" BorderPane.alignment="CENTER">
+        <children>
+            <GridPane prefWidth="168.0">
+                <columnConstraints>
+                    <ColumnConstraints />
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                </rowConstraints>
+                <Label fx:id="Maze_rows" text="Maze rows:" textFill="WHITE" GridPane.columnIndex="1">
+                  <font>
+                     <Font name="System Bold Italic" size="12.0" />
+                  </font></Label>
+                <Label fx:id="Maze_columns" text="Maze columns:" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <font>
+                     <Font name="System Bold Italic" size="12.0" />
+                  </font></Label>
+                <TextField fx:id="textField_mazeRows" text="50" GridPane.columnIndex="2">
+                  <font>
+                     <Font name="System Bold Italic" size="12.0" />
+                  </font></TextField>
+                <TextField fx:id="textField_mazeColumns" text="50" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                  <font>
+                     <Font name="System Bold Italic" size="12.0" />
+                  </font></TextField>
+                <Label fx:id="Maze_Type" text="Maze Type:" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <font>
+                     <Font name="System Bold Italic" size="12.0" />
+                  </font></Label>
+                <Button fx:id="generateMaze" onAction="#generateMaze" prefHeight="25.0" prefWidth="167.0" text="Generate Maze" textFill="WHITE" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="3">
+                  <font>
+                     <Font name="System Bold Italic" size="12.0" />
+                  </font></Button>
+               <ChoiceBox fx:id="choiceBox" prefHeight="25.0" prefWidth="179.0" value="My Maze" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                   <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="My Maze" />
+                            <String fx:value="Simple Maze" />
+                        </FXCollections>
+                    </items>
+                </ChoiceBox>
+            </GridPane>
+            <ChoiceBox fx:id="SearchableAlgo" prefHeight="25.0" prefWidth="183.0" value="BestFS">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="DFS" />
+                        <String fx:value="BFS" />
+                        <String fx:value="BestFS" />
+                    </FXCollections>
+                </items>
+            </ChoiceBox>
+             <Button fx:id="SolveMaze" cancelButton="true" onAction="#solveMaze" prefHeight="25.0" prefWidth="167.0" text="Solve Maze" />
+        </children>
+        <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+        </padding>
+    </VBox>
+</left>
+<bottom>
+    <HBox prefWidth="388.0" BorderPane.alignment="CENTER" />
+</bottom>
+<top>
+    <VBox BorderPane.alignment="CENTER">
+        <children>
+            <MenuBar fx:id="menuBar" style="-fx-background-color: red">
+                <menus>
+                    <Menu mnemonicParsing="false" text="File">
+                        <items>
+                            <MenuItem fx:id="new" mnemonicParsing="false" onAction="#generateMaze" text="New" />
+                        </items>
+                        <items>
+                            <MenuItem fx:id="load" mnemonicParsing="false" onAction="#loadMaze" text="Load" />
+                        </items>
+                        <items>
+                            <MenuItem fx:id="save" mnemonicParsing="false" onAction="#saveMaze" text="Save" />
+                        </items>
+                    </Menu>
+                    <Menu mnemonicParsing="false" text="Options">
+                        <items>
+                            <MenuItem mnemonicParsing="false" onAction="#switchSceneProperties" text="Properties" />
+                        </items>
+                        <items>
+                            <MenuItem fx:id="music" mnemonicParsing="false" onAction="#setMusic" text="sound-on" />
+                        </items>
+                    </Menu>
+                    <Menu mnemonicParsing="false">
+                     <graphic>
+                        <Label onMouseClicked="#switchSceneHelp" text="Help" />
+                     </graphic></Menu>
+                    <Menu mnemonicParsing="false">
+                     <graphic>
+                        <Label onMouseClicked="#switchSceneAbout" text="About" />
+                     </graphic>
+                    </Menu>
+                    <Menu mnemonicParsing="false">
+                        <graphic>
+                            <Label onMouseClicked="#switchSceneHome" text="Home page" />
+                        </graphic></Menu>
+                    <Menu mnemonicParsing="false">
+                     <graphic>
+                        <Label onMouseClicked="#Exit" text="Exit" />
+                     </graphic></Menu>
+                </menus>
+            </MenuBar>
+        </children>
+    </VBox>
+</top>
+<center>
+    <Pane fx:id="mazePane" onScroll="#Zoom" prefHeight="306.0" prefWidth="342.0" BorderPane.alignment="CENTER">
+        <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+        </padding>
+    </Pane>
+</center>
+</BorderPane>
